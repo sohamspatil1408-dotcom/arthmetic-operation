@@ -1,31 +1,47 @@
-// Simple Arithmetic Program using Switch Case
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations using Switch Case</title>
+</head>
+<body>
 
-let a = 10;
-let b = 5;
-let operator = "+";   // Change operator to +, -, *, /
+<h2>Arithmetic Operations</h2>
 
-let result;
+<script>
+    // Taking input from user
+    let num1 = parseFloat(prompt("Enter first number:"));
+    let num2 = parseFloat(prompt("Enter second number:"));
+    let operator = prompt("Enter operator (+, -, *, /):");
 
-switch (operator) {
-    case "+":
-        result = a + b;
-        break;
+    let result;
 
-    case "-":
-        result = a - b;
-        break;
+    switch(operator) {
+        case "+":
+            result = num1 + num2;
+            break;
 
-    case "*":
-        result = a * b;
-        break;
+        case "-":
+            result = num1 - num2;
+            break;
 
-    case "/":
-        result = a / b;
-        break;
+        case "*":
+            result = num1 * num2;
+            break;
 
-    default:
-        result = "Invalid Operator";
-}
+        case "/":
+            if (num2 !== 0) {
+                result = num1 / num2;
+            } else {
+                result = "Error! Division by zero.";
+            }
+            break;
 
-console.log("Result = " + result);
+        default:
+            result = "Invalid operator!";
+    }
 
+    alert("Result: " + result);
+</script>
+
+</body>
+</html>
